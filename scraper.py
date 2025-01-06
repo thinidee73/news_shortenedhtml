@@ -10,15 +10,6 @@ from bs4 import BeautifulSoup
 
 #, class_='c-article__title'
 
-response = requests.get('https://elperiodic.ad/')
-soup = BeautifulSoup(response.content, 'html.parser')
-headlines = soup.find_all('h5')
-headlines = [headline.get_text() for headline in headlines]
-print(f"Found {len(headlines)} headlines")
-for headline in headlines:
-    print(headline,"\n")
-        
-
 COUNTRY_CONFIG = {
     "AD": {#Andorra
         "bondia": {
